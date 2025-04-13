@@ -2,7 +2,7 @@ import streamlit as st
 import hashlib, base64, os, json, time
 from cryptography.fernet import Fernet
 
-#  Constants 'Configuration Section'
+#  constants cConfiguration section'
 # to store data in json file
 user_data_file = "users.json"
 # salt for password hashing extra randomness
@@ -12,7 +12,7 @@ encryption_key_file = "fernet.key"
 # Lockout time after 3 failed attempts
 max_lockout_duration_in_seconds = 60
 
-# Function to hash passkey using PBKDF2
+# Function to hash passkey ussing PBKDF2
 def hash_passkey(passkey): 
     key = hashlib.pbkdf2_hmac('sha256', passkey.encode(), salt_for_hashing, 100000)
     return base64.b64encode(key).decode()
@@ -45,7 +45,7 @@ def encrypt_data(text): return st.session_state.cipher.encrypt(text.encode()).de
 def decrypt_data(encrypted_text): return st.session_state.cipher.decrypt(encrypted_text.encode()).decode()
 
 
-# Authenticate User and password 
+# Authenticate User and password here
 def authenticate_user(username, password): 
     users = st.session_state.users
     hashed = hash_passkey(password)
@@ -58,7 +58,7 @@ st.title("🔐 Multi-User Secure Text Storage")
 menu = ["Login", "Register", "Store Data", "Retrieve Data", "Logout", "FAQ"]
 choice = st.sidebar.selectbox("Menu", menu)
 
-#  Register New User
+#  Register New User here
 if choice == "Register":
     st.subheader("📝 Register New User")
     new_user = st.text_input("Username")
@@ -133,7 +133,7 @@ elif choice == "Retrieve Data":
 
         current_time = time.time()
         if current_time < st.session_state.lockout_time:
-            st.warning("⏳ Locked out due to failed attempts. Try again later.")
+            st.warning( Locked out due to failed attempts. Try again later.")
         else:
             if st.button("Retrieve"):
                 if label and passkey:
@@ -173,6 +173,6 @@ elif choice == "FAQ":
         "How is encryption done?": "Using Fernet from Python’s cryptography lib.",
         "Can I have multiple accounts?": "Yes, each user has their own vault."
     }
-    question = st.selectbox("Select a question:", list(faq.keys()))
+    question = st.selectbox("Select a question here:", list(faq.keys()))
     st.info(faq[question])
     
