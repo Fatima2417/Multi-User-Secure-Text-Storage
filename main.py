@@ -103,7 +103,7 @@ elif choice == "Logout":
 elif choice == "Store Data":
     if st.session_state.current_user:
         st.subheader("🔒 Store Your Data")
-        label = st.text_input("Label (e.g., note1)")
+        label = st.text_input("Label (name here,.)")
         text = st.text_area("Text to encrypt")
         passkey = st.text_input("Your Passkey", type="password")
         if st.button("Save"):
