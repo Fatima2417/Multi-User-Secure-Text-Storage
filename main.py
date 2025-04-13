@@ -2,7 +2,7 @@ import streamlit as st
 import hashlib, base64, os, json, time
 from cryptography.fernet import Fernet
 
-#  constants cConfiguration section'
+#  constants 'Configuration section'
 # to store data in json file
 user_data_file = "users.json"
 # salt for password hashing extra randomness
