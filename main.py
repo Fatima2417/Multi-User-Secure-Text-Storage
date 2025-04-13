@@ -133,7 +133,7 @@ elif choice == "Retrieve Data":
 
         current_time = time.time()
         if current_time < st.session_state.lockout_time:
-            st.warning( Locked out due to failed attempts. Try again later.")
+            st.warning("Locked out due to the failed attempts. Try again later.")
         else:
             if st.button("Retrieve"):
                 if label and passkey:
