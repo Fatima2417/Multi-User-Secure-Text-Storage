@@ -159,7 +159,7 @@ elif choice == "Retrieve Data":
     else:
         st.warning("Please log in first.")
 
-# FAQ Section
+# FAQ Section : additional feature from my site
 elif choice == "FAQ":
     st.subheader("❓ FAQ")
     faq = {
